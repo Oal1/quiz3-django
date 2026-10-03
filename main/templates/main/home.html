@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .student {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student List</h1>
+
+        {% for student in students %}
+
+            <div class="student">
+                <h3>{{ student.name }}</h3>
+                <p>Course: {{ student.course }}</p>
+                <p>Year Level: {{ student.year_level }}</p>
+            </div>
+
+        {% empty %}
+
+            <p>No students found.</p>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>
